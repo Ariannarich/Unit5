@@ -2,9 +2,11 @@ package com.company;
 
 public class Square {
 
-private double side;
+private double side (double s) {
+    s = side;
+}
 
-public Square square = new Square(double s);
+
 
 Square(s)
 
