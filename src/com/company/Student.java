@@ -11,51 +11,54 @@ public class Student
 {
     //declare instance data
 private String name;
-private int score1;
-private int score2;
+private double score1;
+private double score2;
 
-    Student (String n)
-        {
-            name = n;
-
-        }
     //-----------------------------------------------
     //constructor
     //-----------------------------------------------
-    public Student(String studentName)
+    public Student(String n)
     {
-        //add body of constructor
+        name = n;
     }
-
     //-----------------------------------------------
     //inputGrades: prompt for and read in student's grades for test1 and test2.
     //Use name in prompts, e.g., "Enter's Joe's score for test1".
     //-----------------------------------------------
     public void inputGrades()
     {
-        //add body of inputGrades
+      Scanner input = new Scanner(System.in);
+      System.out.println("Enter " + name+ "'s score for test one.");
+      score1 = input.nextDouble();
+        System.out.println("Enter " + name+ "'s score for test two.");
+        score2 = input.nextDouble();
     }
 
     //-----------------------------------------------
     //getAverage: compute and return the student's test average
     //-----------------------------------------------
-
-    //add header for getAverage
-    {
-        //add body of getAverage
-    }
+public double getAverage()
+{
+    double avg = score1 + score2/2;
+    return avg;
+}
 
     //-----------------------------------------------
     //getName: print the student's name
     //-----------------------------------------------
-
-    //add header for printName
-    {
-        //add body of printName
+public void getName()
+{
+    Scanner input = new Scanner(System.in);
+      System.out.println("Enter name:");
+    name = input.next();
     }
 
     // toString method:  Output in the following format
     // Name: Joe  Test1: 85  Test2: 91
+    public String toString()
+    {
+        return "Name: " + name + "\n Test one: " + "$" + score1 + "\n Test two: " + score2 + "\n";
+    }
 
 
 }

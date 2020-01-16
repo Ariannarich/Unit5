@@ -5,7 +5,7 @@ public class Item {
     private String description;
     private double price;
 
-    public Item(String n, String d, double p)
+   Item(String n, String d, double p)
     {
         number = n;
         description = d;
