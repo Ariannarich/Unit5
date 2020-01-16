@@ -5,18 +5,24 @@ public class Item {
     private String description;
     private double price;
 
-    public Item(String a, String b, double c)
+    public Item(String n, String d, double p)
     {
-        a = number;
-        b= description;
-        c =price;
-if(c<=0)
+        number = n;
+        description = d;
+         price = p;
+if(p <= 0)
     price = 0;
     }
     public double getTotalPrice(int quantity)
-    {
-        if(quantity<=0)
-            quantity =0;
-return c;
+    {if(quantity<=0)
+        quantity = 0;
+    double totalP = quantity * price;
+
+return totalP;
     }
+    public String toString()
+    {
+        return "Item: " + number + "\n Price: " + "$" + price + "\n Description: " + description + "\n";
+    }
+
 }
