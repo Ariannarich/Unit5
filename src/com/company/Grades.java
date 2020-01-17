@@ -15,17 +15,19 @@ public class Grades
         Student student2 = new Student("Mike");
 
 
-        //input grades for Mary
-       student1.inputGrades();
-        //print Mary
-       student1.getName();
-        //use getAverage to calculate & print average for Mary
-        student1.getAverage();
+
+    student1.inputGrades();
+        student1.getName();
+        String avg = student1.getAverage();
+System.out.println(avg);
+        System.out.println(student1);
 
 
-        //input grades for Mike
-        //print Mike
-        //use getAverage to calculate & print average for Mike
+      student2.getName();
+        student2.inputGrades();
+        String avg2 = student2.getAverage();
+        System.out.println(avg2);
+        System.out.println(student2);
 
     }
 }

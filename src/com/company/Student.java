@@ -37,27 +37,25 @@ private double score2;
     //-----------------------------------------------
     //getAverage: compute and return the student's test average
     //-----------------------------------------------
-public double getAverage()
+public String getAverage()
 {
-    double avg = score1 + score2/2;
-    return avg;
+    double avg = (score1 + score2)/2;
+    return "The average score for " + name + " is " + avg;
 }
 
     //-----------------------------------------------
     //getName: print the student's name
     //-----------------------------------------------
-public void getName()
+public String getName()
 {
-    Scanner input = new Scanner(System.in);
-      System.out.println("Enter name:");
-    name = input.next();
+    return name;
     }
 
     // toString method:  Output in the following format
     // Name: Joe  Test1: 85  Test2: 91
     public String toString()
     {
-        return "Name: " + name + "\n Test one: " + "$" + score1 + "\n Test two: " + score2 + "\n";
+        return "\n Name: " + name + "\n Test one: " + score1 + "\n Test two: " + score2 + "\n";
     }
 
 
