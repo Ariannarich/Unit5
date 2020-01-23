@@ -1,6 +1,8 @@
 package com.company;
 
 public class CarTripTester {
-    CarTrip x = new CarTrip();
-    CarTrip y = new CarTrip();
+    CarTrip t1 = new CarTrip();
+    CarTrip t2 = new CarTrip();
+
+
 }
