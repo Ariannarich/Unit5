@@ -37,10 +37,10 @@ private double score2;
     //-----------------------------------------------
     //getAverage: compute and return the student's test average
     //-----------------------------------------------
-public String getAverage()
+public double getAverage()
 {
     double avg = (score1 + score2)/2;
-    return "The average score for " + name + " is " + avg;
+    return avg;
 }
 
     //-----------------------------------------------
