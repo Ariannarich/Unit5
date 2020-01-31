@@ -27,61 +27,65 @@ public double getFuel()
     {
         return fuel;
     }
-    public void setMpg()
+    public void setMpg(double miles)
     {
-        mpg = fuel/ odometer;
+        mpg = miles;
     }
-    public double getMpg(double m)
+    public double getMpg()
     {
-        return mpg = m;
+        return mpg;
     }
     public String getTruckID()
     {
         return truckID;
     }
-public boolean enoughFuel()
+
+    public boolean enoughFuel(double miles)
 {
-    if(fuel >= CAPACITY  || fuel< mpg)
+    double distance = fuel * mpg;
+    if( miles > distance )
         return false;
     else
         return true;
 }
-public String drive(double miles) {
-
-    odometer += miles;
+public String drive(double miles2) {
 
     String blank = "";
-    if (enoughFuel() == false)
-        blank += "Truck" + truckID + " does not have enough fuel to drive " + odometer + "miles.";
-    else{
+    if (!enoughFuel(miles2))
+        blank += "Truck " + truckID + " does not have enough fuel to drive " + miles2 + " miles.";
+    else {
         blank += "Success";
-    for (double i = odometer; i >= mpg; i/=mpg );
-    fuel--;
-}
-    return blank;
+        odometer += miles2;
 
+        double fuelUsed = miles2 / mpg;
+
+        fuel -= fuelUsed;
+
+    }
+    return blank;
 }
 public void fill()
 {
-    while(fuel < CAPACITY)
+    totalFuel = fuel;
+    while (fuel < CAPACITY)
     {
         fuel++;
     }
-
+    totalFuel += fuel;
+}
+public String fill(double gal) {
+    String blank = "";
+    if (gal > CAPACITY)
+            blank += "Truck " + truckID + ": Gallons exceeds tank capacity";
+    return blank;
 }
 
-public void fill(double gal)
-    {
-        if (gal > totalFuel)
-            System.out.println("Gallons exceed tank capacity.");
-       fuel += gal;
-    }
 public static double getTotalFuel()
 {
     return totalFuel;
 }
 public String toString()
 {
-    return "Truck: " + truckID + "\n " + "Odometer: " + odometer+ "\n "+ "Miles Per Gallon: " + mpg + "\n " + "Fuel: " + fuel;
+    return "Truck: " + truckID + "\n" + "Odometer: " + odometer+ "\n"+ "Miles Per Gallon: " + mpg + "\n" + "Fuel: " + fuel;
 }
 }
