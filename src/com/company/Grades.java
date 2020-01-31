@@ -18,14 +18,14 @@ public class Grades
 
         student1.inputGrades();
         student1.getName();
-        String avg = student1.getAverage();
+        double avg = student1.getAverage();
         System.out.println(avg);
         System.out.println(student1);
 
 
         student2.getName();
         student2.inputGrades();
-        String avg2 = student2.getAverage();
+        double avg2 = student2.getAverage();
         System.out.println(avg2);
         System.out.println(student2);
 
