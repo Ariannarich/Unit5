@@ -6,38 +6,33 @@ public class Account {
     private int acctNum;
     private double balance;
 
-    public Account() {
-        this.first = "";
-        this.last = "";
-        this.balance = 0;
-    }
-
-    public Account(String first, String last, double balance, int acctNum) {
-        this.first = first;
-        this.last = last;
-        this.balance = balance;
-        this.acctNum = (int) (Math.random() * 999) + 1;
-    }
 
     public Account(String first, String last, double balance) {
         this.first = first;
         this.last = last;
         this.balance = balance;
+        this.acctNum = (int) (Math.random() * 999) + 1;
+    }
+    public Account() {
+        this("", "", 0.0);
+    }
+    public Account(Account acct2) {
+        this(acct2.first, acct2.last, acct2.balance);
     }
 
-    public String getFirstName() {
+    public String getFirst() {
         return first;
     }
 
-    public void setFirstName(String first) {
+    public void setFirst(String first) {
         this.first = first;
     }
 
-    public String getLastName() {
+    public String getLast() {
         return last;
     }
 
-    public void setLastName(String last) {
+    public void setLast(String last) {
         this.last = last;
     }
 
@@ -64,6 +59,6 @@ public class Account {
 
     }
     public String  toString(){
-        return "Customer Name: " + first + last + "\n Account #: " + acctNum + "\n Current Balance: " + balance;
+        return "Customer Name: " + first+" "+ last + "\nAccount #: " + acctNum + "\nCurrent Balance: $" + balance;
     }
 }
