@@ -5,6 +5,14 @@ public class Fraction {
     private int denominator;
 
     public Fraction(int numerator, int denominator) {
+        if (this.denominator < 0 && this.numerator > 0)
+        { this.denominator = Math.abs(this.denominator);
+            this.numerator = 0- this.numerator;
+        }
+        else if(this.denominator < 0 && this.numerator > 0)
+        {this.denominator = Math.abs(this.denominator);
+            this.numerator = 0-this.numerator;
+        }
         this.numerator = numerator;
         this.denominator = denominator;
         int gcd = reduce(this.numerator, this.denominator);
@@ -80,16 +88,11 @@ public static void reduce(Fraction f1, Fraction f2) {
     }
 
     public static void simplify(Fraction f1, Fraction f2) {
-        if ((f1.denominator < 0||f2.denominator < 0) && ((f1.numerator > 0 || f2.numerator > 0) )) //each one needs id
-        {
-            f1.denominator = Math.abs(f1.denominator);
-           f2.denominator = Math.abs(f2.denominator);
-            f1.numerator = 0-f1.numerator;
-            f2.numerator = 0-f2.numerator;
+
 
 
         }
-    }
+
 public String toString(){
         return numerator+"/"+denominator;
 }
