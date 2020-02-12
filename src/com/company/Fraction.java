@@ -43,10 +43,10 @@ public class Fraction {
     }
 
     /**
-     * Finds the greatest common divisor to reduce fractions with.
-     * @param m
-     * @param n
-     * @return
+     * Finds the greatest common divisor (GCD) of two values to reduce fractions with.
+     * @param m value 1
+     * @param n value 2
+     * @return returns GCD
      */
    private int reduce ( int m, int n){
         while (m % n != 0) {
