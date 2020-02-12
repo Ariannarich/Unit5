@@ -16,8 +16,8 @@ public class Fraction {
 
     /**
      * Constructor for Fraction object.
-     * @param numerator
-     * @param denominator
+     * @param numerator numerator of fraction
+     * @param denominator denominator of fraction
      * Also, simplifies fractions using the greatest common divisor,
      * and switches negative sign from the denominator to the numerator.
      */
