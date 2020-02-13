@@ -149,13 +149,24 @@ public class Review {
     }
   }
 
-  public static void main(String[] args) {
-    {
+ // public static int starRating(String fileName) {
 
-      sentimentVal("happily");
-      sentimentVal("terrible");
-      sentimentVal("cold");
 
+
+  public static double totalSentiment(String fileName) {
+    String review = textToString(fileName);
+double total=0;
+    int i = 0;
+    while (i < review.length()) {
+      while (i < review.indexOf(SPACE)) ;
+      {
+        i++;
+      }
+      String word = review.substring(0, i);
+     total += sentimentVal(word);
+      i = review.indexOf(i + 1);
     }
+    return total;
   }
 }
+
