@@ -157,14 +157,21 @@ public class Review {
     String review = textToString(fileName);
 double total=0;
     int i = 0;
-    while (i < review.length()) {
-      while (i < review.indexOf(SPACE)) ;
+
+    String copy = review;
+    while (i < review.length()-1) {
+      int count = 0;
+      while (count < copy.indexOf(SPACE))
       {
+        count++;
         i++;
       }
-      String word = review.substring(0, i);
+      String word = copy.substring(0, count );
      total += sentimentVal(word);
-      i = review.indexOf(i + 1);
+
+       copy = copy.substring(word.length() + 1);
+
+
     }
     return total;
   }
