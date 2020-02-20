@@ -123,7 +123,8 @@ public class Fraction {
      * String method that prints fraction answer from equations
      * @return returns fraction as string
      */
-    public String toString(){
+    public String toString()
+     {
         return numerator+"/"+denominator;
 }
 }

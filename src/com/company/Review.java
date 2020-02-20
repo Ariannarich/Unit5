@@ -156,21 +156,21 @@ public class Review {
   public static double totalSentiment(String fileName) {
     String review = textToString(fileName);
 double total=0;
-    int i = 0;
+
 
     String copy = review;
-    while (i < review.length()-1) {
+    for(int i= 0; i < review.length()-1; i++) {
       int count = 0;
       while (count < copy.indexOf(SPACE))
       {
         count++;
-        i++;
+
       }
+      if(i> copy.length())
+        break;
       String word = copy.substring(0, count );
      total += sentimentVal(word);
-
-       copy = copy.substring(word.length() + 1);
-
+     copy = copy.substring(word.length() + 1);
 
     }
     return total;
