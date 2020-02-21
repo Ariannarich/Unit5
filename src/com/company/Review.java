@@ -149,31 +149,43 @@ public class Review {
     }
   }
 
- // public static int starRating(String fileName) {
+public static int starRating(String fileName) {
+  double totalSentiment = totalSentiment(fileName);
+  if (totalSentiment >= 15) {
+    return 4;
+  } else if (15 < totalSentiment && totalSentiment >= 10)
+  {
+    return 3;
+}
+    else if(10 < totalSentiment && totalSentiment >= 5) {
+    return 2;
+  }
+    else if(5 < totalSentiment && totalSentiment >= 0) {
+    return 1;
+  }
+    else {
+    return 0;
+  }
 
-
+}
 
   public static double totalSentiment(String fileName) {
     String review = textToString(fileName);
-double total=0;
-
-
+    double total = 0;
     String copy = review;
-    for(int i= 0; i < review.length()-1; i++) {
+    for (int i = 0; i < review.length() - 1; i++) {
       int count = 0;
-      while (count < copy.indexOf(SPACE))
-      {
+
+      while (count < copy.indexOf(SPACE)) {
         count++;
-
       }
-      if(i> copy.length())
+      String word = copy.substring(0, count);
+word = removePunctuation(word);
+      total += sentimentVal(word);
+      copy = copy.substring(word.length() + 1);
+      if (copy.length() <= 0)
         break;
-      String word = copy.substring(0, count );
-     total += sentimentVal(word);
-     copy = copy.substring(word.length() + 1);
-
     }
     return total;
   }
 }
-
